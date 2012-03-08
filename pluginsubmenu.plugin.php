@@ -14,7 +14,7 @@ class PluginSubmenu extends Plugin
 		$submenu_count = 0;
 		foreach ( $active_plugins as $pluginobj ) {
 			$plugin_actions = array();
-			$plugin_actions = Plugins::filter( 'plugin_config', $plugin_actions, $pluginobj->plugin_id() );
+			$plugin_actions = Plugins::filter_id('plugin_config', $pluginobj->plugin_id(), $plugin_actions, $pluginobj->plugin_id() );
 
 			foreach ( $plugin_actions as $plugin_action => $plugin_action_caption ) {
 				if ( is_numeric($plugin_action) ) {
